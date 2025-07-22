@@ -2,10 +2,15 @@
 #define AMERICAN_OPTION_HPP
 
 #include "Option.hpp"
+#include "OptionType.hpp"
 
 class AmericanOption : public Option {
+private:
+    int N;
+    OptionType type;
+
 public:
-    AmericanOption(double S, double K, double T, double r, double sigma);
+    AmericanOption(double S, double K, double T, double r, double sigma, int N, OptionType type);
     double price() const override;
 };
 

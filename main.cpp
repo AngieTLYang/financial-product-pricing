@@ -16,10 +16,13 @@ int main() {
     std::cout << "European Call Option Price: " << euroCall.price() << std::endl;
     EuropeanOption euroPut(S, K, T, r, sigma, OptionType::Put);
     std::cout << "European Put Option Price: " << euroPut.price() << std::endl;
-    
+
+    int N = 1000;
     // American option 
-    AmericanOption amerOpt(S, K, T, r, sigma);
-    std::cout << "American Option Price: " << amerOpt.price() << std::endl;
+    AmericanOption amerCall(S, K, T, r, sigma, N, OptionType::Call);
+    std::cout << "American Option Price: " << amerCall.price() << std::endl;
+    AmericanOption amerPut(S, K, T, r, sigma, N, OptionType::Put);
+    std::cout << "American Option Price: " << amerPut.price() << std::endl;
 
     return 0;
 }
